@@ -1,13 +1,9 @@
 import express from "express";
 import { v4 as uuidv4 } from "uuid";
+import { JsonQuestionDbManager } from "./db/JsonQuestionDbManager.ts";
 
 const app = express();
 const PORT = 4000;
-
-app.use((req, res, next) => {
-  console.log(`${req.method} request for '${req.url}'`);
-  next(); // Pass control to the next middleware function
-});
 
 // Sample data
 const question = {
@@ -34,8 +30,9 @@ const questionMap = {
 };
 
 // Routes
-app.get("/question", (req, res) => {
-  res.json(question);
+app.get("/question", async (req, res) => {
+  const questions = await JsonQuestionDbManager.getAll();
+  res.json(questions);
 });
 
 app.get("/questionRelationship", (req, res) => {

@@ -1,8 +1,4 @@
-enum Difficulty {
-  EASY,
-  MEDIUM,
-  HARD,
-}
+type Difficulty = "EASY" | "MEDIUM" | "HARD";
 
 export type Question = {
   _id: number;
