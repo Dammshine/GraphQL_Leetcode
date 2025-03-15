@@ -5,3 +5,7 @@ export function assertUnreachable(x: never, shouldThrow: boolean = true) {
     );
   }
 }
+
+export function cloneSimple<T>(x: T): T {
+  return JSON.parse(JSON.stringify(x)) as T;
+}
