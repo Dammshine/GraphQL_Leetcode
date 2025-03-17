@@ -73,6 +73,24 @@ This provide a sample JSON structure for what we like to acquire from Python par
 }
 ```
 
+### Relationship
+The relationship strength (relationStrength) should be based on:
+
+Tags Overlap: The more tags two questions share, the stronger the relationship.
+Difficulty Difference: Similar difficulties should have a stronger relationship.
+
+Formula for relationStrength:
+
+relationStrength = shared tags count / total unique tags count * difficulty factor
+
+where:
+Shared Tags Count = Number of common tags between two questions.
+Total Unique Tags Count = Unique tags across both questions.
+Difficulty Factor: A weight applied based on the difficulty difference:
+Same difficulty → 1.0
+One level apart (Easy → Medium, Medium → Hard) → 0.85
+Two levels apart (Easy → Hard) → 0.7
+
 ## 1. Spider Chart of Skills
 
 **User Goal:**
