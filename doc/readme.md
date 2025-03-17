@@ -73,7 +73,6 @@ This provide a sample JSON structure for what we like to acquire from Python par
 }
 ```
 
-
 ## 1. Spider Chart of Skills
 
 **User Goal:**
@@ -139,7 +138,7 @@ This provide a sample JSON structure for what we like to acquire from Python par
 
 ---
 
-## 4. Typical User Flow
+# 4. Typical User Flow
 
 1. **Login**
    * The user signs in, and the frontend pulls the user’s data (`User` type from GraphQL).
